@@ -10,4 +10,4 @@ class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=50)
     publication_date = models.DateField()
-    taken_by = models.ForeignKey(Reader, on_delete=models.SET_NULL, null=True)
+    taken_by = models.ForeignKey(Reader, on_delete=models.SET_NULL, null=True, blank=True)
