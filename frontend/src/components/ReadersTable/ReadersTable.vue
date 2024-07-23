@@ -22,6 +22,7 @@
                     {{ reader.email }}
                 </td>
                 <td>
+                    {{ reader.books_count }}
                 </td>
             </tr>
         </tbody>
