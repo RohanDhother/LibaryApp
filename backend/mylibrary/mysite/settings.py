@@ -27,8 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-AUTH_USER_MODEL = 'mylibrary.User'
-
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:8080',
 ]
