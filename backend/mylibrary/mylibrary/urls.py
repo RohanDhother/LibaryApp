@@ -21,6 +21,7 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register('books', views.BookViewSet)
+router.register('readers', views.ReaderViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

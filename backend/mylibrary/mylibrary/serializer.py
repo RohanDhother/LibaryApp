@@ -8,7 +8,7 @@ class BookSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-# class ReaderSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Reader
-#         fields = '__all__'
+class ReaderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Reader
+        fields = '__all__'
