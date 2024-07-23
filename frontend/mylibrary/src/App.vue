@@ -1,15 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <h1>
+    Library App
+  </h1>
+  <div class="row">
+    <div class="col-md-6 m-3">
+      <BooksTable />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import BooksTable from "./components/BooksTable/BooksTable.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    BooksTable
+  },
+  async mounted() {
+    console.log("test");
+    let response = await fetch("http://127.0.0.1:8000/books/");
+    const data = await response.json();
+    console.log("data:", data);
   },
 };
 </script>
