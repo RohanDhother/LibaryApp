@@ -1,13 +1,19 @@
 <template>
-  <h1>
-    Library App
-  </h1>
-  <div class="row m-3 mt-4">
-    <div class="col-md-6">
-      <BooksTable />
-    </div>
-    <div class="col-md-6">
-      <ReadersTable />
+  <div class="container">
+    <div class="row">
+      <div class="row">
+        <h1>
+          Library App
+        </h1>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <BooksTable />
+        </div>
+        <div class="col-md-6">
+          <ReadersTable />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -21,12 +27,6 @@ export default {
   components: {
     BooksTable,
     ReadersTable
-  },
-  async mounted() {
-    console.log("test");
-    let response = await fetch("http://127.0.0.1:8000/books/");
-    const data = await response.json();
-    console.log("data:", data);
   },
 };
 </script>
