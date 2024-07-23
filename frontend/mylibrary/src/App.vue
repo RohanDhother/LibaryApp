@@ -2,20 +2,25 @@
   <h1>
     Library App
   </h1>
-  <div class="row">
-    <div class="col-md-6 m-3">
+  <div class="row m-3 mt-4">
+    <div class="col-md-6">
       <BooksTable />
+    </div>
+    <div class="col-md-6">
+      <ReadersTable />
     </div>
   </div>
 </template>
 
 <script>
 import BooksTable from "./components/BooksTable/BooksTable.vue";
+import ReadersTable from "./components/ReadersTable/ReadersTable.vue";
 
 export default {
   name: "App",
   components: {
-    BooksTable
+    BooksTable,
+    ReadersTable
   },
   async mounted() {
     console.log("test");
