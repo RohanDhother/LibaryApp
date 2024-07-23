@@ -7,11 +7,25 @@
         </h1>
       </div>
       <div class="row mt-4">
-        <div class="col-md-6">
-          <BooksTable />
+        <div class="row">
+          <div class="col-md-6">
+            <h2>
+              Books Table
+            </h2>
+          </div>
+          <div class="col-md-6">
+            <h2>
+              Readers table
+            </h2>
+          </div>
         </div>
-        <div class="col-md-6">
-          <ReadersTable />
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <BooksTable />
+          </div>
+          <div class="col-md-6">
+            <ReadersTable />
+          </div>
         </div>
       </div>
     </div>
