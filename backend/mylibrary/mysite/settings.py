@@ -29,6 +29,10 @@ ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'mylibrary.User'
 
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:8080',
+]
+
 
 # Application definition
 
@@ -39,7 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mylibrary'
+    'mylibrary',
+    'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -50,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'mysite.urls'
