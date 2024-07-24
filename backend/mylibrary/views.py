@@ -18,7 +18,7 @@ class BookViewSet(viewsets.ModelViewSet):
                                           partial=True)
         serializer.is_valid(raise_exception=True)
         self.perform_update(serializer)
-        return Response(serializer.data)
+        return Response(True)
 
 
 class ReaderViewSet(viewsets.ModelViewSet):

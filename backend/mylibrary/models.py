@@ -10,4 +10,5 @@ class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=50)
     publication_date = models.DateField()
+    loan_start_date = models.DateTimeField(null=True, blank=True)
     taken_by = models.ForeignKey(Reader, on_delete=models.SET_NULL, null=True, blank=True)

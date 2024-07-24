@@ -14,16 +14,18 @@ class BookSerializer(serializers.ModelSerializer):
 
 
 class BookUpdateSerializer(serializers.ModelSerializer):
-    reader_id = serializers.IntegerField(write_only=True)
+    reader_id = serializers.IntegerField()
 
     class Meta:
         model = Book
-        fields = ['id', 'reader_id']
+        fields = ['id', 'reader_id', 'loan_start_date']
 
     def update(self, instance, validated_data):
         reader_id = validated_data.pop('reader_id')
+        loan_start_date = validated_data.pop('loan_start_date')
         reader = Reader.objects.get(id=reader_id)
         instance.taken_by = reader
+        instance.loan_start_date = loan_start_date
         instance.save()
         return instance
 
