@@ -30,6 +30,7 @@ class BookUpdateSerializer(serializers.ModelSerializer):
 
 class ReaderSerializer(serializers.ModelSerializer):
     books_count = serializers.SerializerMethodField()
+    books = serializers.SerializerMethodField()
 
     class Meta:
         model = Reader
@@ -37,6 +38,10 @@ class ReaderSerializer(serializers.ModelSerializer):
 
     def get_books_count(self, obj):
         return obj.book_set.count()
+
+    def get_books(self, obj):
+        books = obj.book_set.all()
+        return BookSerializer(books, many=True).data
 
 
 class ReaderNameSerializer(serializers.ModelSerializer):
