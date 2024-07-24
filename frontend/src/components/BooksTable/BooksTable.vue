@@ -106,7 +106,7 @@ export default {
         },
         formatTimeLeft: function (book) {
             if(book.loan_start_date === null){
-                book.timeleft = "not";
+                book.timeleft = "not assigned";
                 return '';
             }
             let timeLeft = this.getTimeLeft(book.loan_start_date);
